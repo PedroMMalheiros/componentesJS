@@ -25,9 +25,17 @@ const content = document.createElement('div')
 content.classList.add('content')
 
 //inserindo o conteudo passado pelas propriedades como filho
-content.append(props.children)
 
-//insedindo o header e content como filhos do componente
+// ?: é conhecido como "Elvis operator" ou "Ternario"
+// é como um if/else de 1 unica linha
+const children = Array.isArray(props.children)
+? props.children
+:[props.children];
+//... é conhecido como "spread operator"
+// ele pega o array e passa os valores como se estivesse 
+// separando seus conteudo por virgula
+content.append(...children);
+//inserindo o header e content como filhos do componente
 section.append(header, content);
 
 

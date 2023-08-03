@@ -23,4 +23,7 @@ color: #f8f8f8;
 background: #ffffff;
 padding: 0.5rem;
 border-radius: 0.5rem;
+display: flex;
+flex-direction: column;
+gap: 0.5em;
 }

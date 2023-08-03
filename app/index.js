@@ -1,4 +1,4 @@
-import { Accordion, Section } from "../components/index.js";
+import { Accordion, Alert, Section } from "../components/index.js";
 
 //propriedades que iremos passar para a função Accordion
 const accordionProps = {
@@ -24,4 +24,18 @@ document.body.append(
     Section({
         title: Accordion.name,
         children: Accordion(accordionProps),
-    }));
+    }),
+    Section({
+title: Alert.name,
+children: [
+    Alert({ text: "Hello, World", color:"blue"}),
+    Alert({ text: "Hello, World", color:"green"}),
+    Alert({ text: "Hello, World", color:"red"}),
+    Alert({ text: "Hello, World", color:"yellow"}),
+    ],
+})
+    
+    );
+
+
+
