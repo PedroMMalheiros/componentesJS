@@ -1,4 +1,4 @@
-import { Accordion, Alert, Section, Button, Tab } from "../components/index.js";
+import { Accordion, Alert, Section, Button, Tab } from "./components/index.js";
 
 //propriedades que iremos passar para a função Accordion
 const accordionProps = {
