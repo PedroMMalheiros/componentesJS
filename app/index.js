@@ -1,4 +1,4 @@
-import { Accordion, Alert, Section, Button } from "../components/index.js";
+import { Accordion, Alert, Section, Button, Tab } from "../components/index.js";
 
 //propriedades que iremos passar para a função Accordion
 const accordionProps = {
@@ -49,17 +49,29 @@ document.body.append(
                 onclick: function () {
                     alert("on click funcionando");
                 },
-
             })
-
-
         ]
+    }),
 
+    Section({
+        title: Tab.name,
+        children: [
+            Tab({
+                data: [
+                    { title: "Accordions", children: Accordion(accordionProps) },
 
+                    {
+                        title: "Alerts",
+                        children: [
 
+                            Alert({ text: "Hello World red", color: "red" }),
+                            Alert({ text: "Hello World Yellow", color: "yellow" }),
+                        ],
+                    },
+                ]
+            })
+        ]
     })
-
-
 );
 
 
