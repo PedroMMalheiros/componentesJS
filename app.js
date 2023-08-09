@@ -1,4 +1,4 @@
-import { Accordion, Alert, Section, Button, Tab } from "./components/index.js";
+import { Accordion, Alert, Section, Button, Tab, Modal, } from "./components/index.js";
 
 //propriedades que iremos passar para a função Accordion
 const accordionProps = {
@@ -71,6 +71,37 @@ document.body.append(
                 ]
             })
         ]
+    }),
+    Section({
+        title: Modal.name,
+        children: [
+            Button({
+                children: "Abrir modal 1",
+                type: "button",
+                onclick: function () {
+                    const modal = Modal({
+                        children: 'Aqui esta o conteudo do modal',
+                    });
+
+                    modal.show();
+                },
+            }),
+            Button({
+                children: 'Abrir modal 2',
+                type: "button",
+                onclick: function () {
+                    const modal = Modal({
+                        children: [
+                            "Aqui esta outro conteudo",
+                            document.createElement('br'),
+                            Accordion(accordionProps)
+                        ],
+                    });
+
+                    modal.show();
+                },
+            }),
+        ],
     })
 );
 
